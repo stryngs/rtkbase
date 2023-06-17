@@ -332,13 +332,13 @@ rtkbase_requirements(){
       fi
       python3 -m pip install --upgrade pip setuptools wheel  --extra-index-url https://www.piwheels.org/simple
       # install prebuilt wheel for cryptography because it is unavailable on piwheels (2023/01)
-      if [[ $platform == 'armv7l' ]] && [[ $(python3 --version) =~ '3.7' ]]
-        then 
-          python3 -m pip install "${rtkbase_path}"/tools/wheel/cryptography-38.0.0-cp37-cp37m-linux_armv7l.whl
-      elif [[ $platform == 'armv6l' ]] && [[ $(python3 --version) =~ '3.7' ]]
-        then
-          python3 -m pip install "${rtkbase_path}"/tools/wheel/cryptography-38.0.0-cp37-cp37m-linux_armv6l.whl
-      fi
+      #if [[ $platform == 'armv7l' ]] && [[ $(python3 --version) =~ '3.7' ]]
+      #  then 
+      #    python3 -m pip install "${rtkbase_path}"/tools/wheel/cryptography-38.0.0-cp37-cp37m-linux_armv7l.whl
+      #elif [[ $platform == 'armv6l' ]] && [[ $(python3 --version) =~ '3.7' ]]
+      #  then
+      #    python3 -m pip install "${rtkbase_path}"/tools/wheel/cryptography-38.0.0-cp37-cp37m-linux_armv6l.whl
+      #fi
       python3 -m pip install -r "${rtkbase_path}"/web_app/requirements.txt  --extra-index-url https://www.piwheels.org/simple
       #when we will be able to launch the web server without root, we will use
       #sudo -u $(logname) python3 -m pip install -r requirements.txt --user.
